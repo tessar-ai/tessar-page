@@ -1,0 +1,341 @@
+.hero {
+  position: sticky;
+  top: var(--frame-size);
+  z-index: 0;
+  min-height: calc(100svh - var(--header-height));
+  overflow: clip;
+}
+
+.hero-layout {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  min-height: inherit;
+  margin: 0;
+  padding-inline: var(--page-gutter);
+  display: grid;
+  align-items: center;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  width: min(62%, 760px);
+  padding-block: 52px 64px;
+}
+
+.hero-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #0b1730;
+}
+
+.hero-atmosphere>img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-atmosphere::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, #071326eF 0%, #071326d9 32%, #07132688 54%, #07132630 78%, #07132620 100%), linear-gradient(0deg, #07132645, transparent 28%, transparent 76%, #07132630);
+}
+
+.rune-field {
+  position: absolute;
+  inset: 4% 1% 4% 36%;
+  pointer-events: none;
+}
+
+.plugin-rune {
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  min-width: 72px;
+  padding: 10px 8px;
+  color: #e5f0ff;
+  text-align: center;
+  pointer-events: auto;
+  opacity: .72;
+  transition: opacity 180ms ease, color 180ms ease, filter 180ms ease, transform 180ms ease;
+}
+
+.plugin-rune svg {
+  width: clamp(27px, 3.2vw, 43px);
+  height: auto;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: square;
+  stroke-linejoin: bevel;
+  filter: drop-shadow(0 0 5px #99b9fe55);
+}
+
+.plugin-rune span {
+  font-size: 12px;
+  opacity: .8;
+}
+
+.plugin-rune:hover,
+.plugin-rune:focus-visible {
+  color: white;
+  opacity: 1;
+  filter: drop-shadow(0 0 16px #99b9fecc);
+  transform: scale(1.08);
+  text-decoration: none;
+}
+
+.rune-one {
+  top: 12%;
+  left: 49%;
+  transform: rotate(-12deg);
+}
+
+.rune-two {
+  top: 27%;
+  left: 78%;
+  transform: rotate(8deg);
+}
+
+.rune-three {
+  top: 51%;
+  left: 61%;
+  transform: rotate(7deg);
+}
+
+.rune-four {
+  top: 72%;
+  left: 85%;
+  transform: rotate(-9deg);
+}
+
+.hero h1 {
+  max-width: 780px;
+  color: #F5F8FF;
+  font-size: clamp(76px, 9.1vw, 132px);
+  font-weight: 300;
+  line-height: .9;
+  letter-spacing: -.07em;
+  text-wrap: initial;
+}
+
+.hero h1 span {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  animation: cover-settle var(--hero-entrance) cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.hero h1 span:last-child {
+  color: var(--primary);
+}
+
+.hero-intro {
+  max-width: 48ch;
+  margin-top: 28px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #D9E4F6;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.install {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 54px;
+  padding: 4px 0 4px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.install code {
+  min-width: 0;
+  color: #F5F8FF;
+  user-select: all;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.install .copy-button {
+  color: var(--link);
+}
+
+.hero-fact {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 24px;
+  color: #D9E4F6;
+  font-size: 12px;
+}
+
+.hero-fact span {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 10px #99b9fe80;
+}
+
+.hero-fact i {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+@keyframes cover-settle {
+  from {
+    opacity: .65;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero-copy {
+    width: min(69%, 760px);
+  }
+
+  .hero h1 {
+    font-size: clamp(72px, 9.5vw, 108px);
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-layout {
+    align-items: start;
+  }
+
+  .hero-copy {
+    width: 100%;
+    padding-block: 54px 48px;
+  }
+
+  .hero-atmosphere {
+    inset: 0;
+  }
+
+  .hero-atmosphere::after {
+    background: linear-gradient(90deg, #071326d9 0%, #071326aa 62%, #07132655 100%), linear-gradient(0deg, #07132650, transparent 28%, transparent 78%, #07132635);
+  }
+
+  .rune-field {
+    inset: 26% -5% 3% 30%;
+  }
+
+  .plugin-rune {
+    min-width: 64px;
+    padding: 8px 4px;
+  }
+
+  .plugin-rune svg {
+    width: 26px;
+  }
+
+  .plugin-rune span {
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(58px, 16vw, 100px);
+  }
+
+  .hero-intro {
+    max-width: 35ch;
+    margin-top: 24px;
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .hero .button {
+    width: fit-content;
+    min-width: 200px;
+  }
+
+  .install {
+    width: fit-content;
+    max-width: 100%;
+    gap: 8px;
+    padding-left: 0;
+  }
+
+  .install code {
+    font-size: 11px;
+  }
+
+  .hero-fact {
+    flex-wrap: wrap;
+    max-width: 34ch;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 56px;
+  }
+}
+
+@media (max-height: 740px) and (min-width: 761px) {
+  .hero-copy {
+    padding-block: 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(72px, 8vw, 108px);
+  }
+
+  .hero-intro {
+    margin-top: 20px;
+  }
+
+  .hero-actions {
+    margin-top: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    position: relative;
+    top: auto;
+  }
+
+  .hero h1 span {
+    animation: none;
+  }
+}

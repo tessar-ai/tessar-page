@@ -1,0 +1,30 @@
+{
+  "status": "approved-identity",
+  "wordmark": {
+    "text": "tessar",
+    "family": "IBM Plex Sans",
+    "weight": 600,
+    "tracking": "-0.04em",
+    "exportTool": "fontkit@2.0.4",
+    "outlined": true
+  },
+  "primary": "#99B9FE",
+  "assets": [
+    {
+      "file": "mark.svg",
+      "usage": "Symbol: light background"
+    },
+    {
+      "file": "logo.svg",
+      "usage": "Horizontal logo: light background"
+    },
+    {
+      "file": "logo-dark.svg",
+      "usage": "Horizontal logo: dark UI background"
+    },
+    {
+      "file": "favicon.svg",
+      "usage": "Fixed primary #99B9FE browser icon in both colour schemes"
+    }
+  ]
+}

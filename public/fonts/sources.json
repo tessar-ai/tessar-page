@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ibmplexsans",
+    "family": "IBM Plex Sans",
+    "range": "100 700",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexsans/IBMPlexSans%5Bwdth%2Cwght%5D.ttf",
+    "file": "ibmplexsans.ttf",
+    "license": "ibmplexsans-OFL.txt",
+    "bytes": 537244
+  },
+  {
+    "id": "ibmplexmono",
+    "family": "IBM Plex Mono",
+    "range": "400",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/IBMPlexMono-Regular.ttf",
+    "file": "ibmplexmono.ttf",
+    "license": "ibmplexmono-OFL.txt",
+    "bytes": 135580
+  }
+]
